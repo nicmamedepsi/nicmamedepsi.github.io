@@ -39,6 +39,9 @@ export const About: React.FC = () => {
               <img 
                 src="/photos/nicole-livro.jpg"
                 alt={`Foto de ${PROFESSIONAL_NAME} segurando um livro`} 
+                width={300}
+                height={375}
+                loading="lazy"
                 className="w-full max-w-[300px] rounded-2xl shadow-xl mb-6 object-cover aspect-[4/5] rotate-2 transition-transform hover:rotate-0 duration-500"
               />
               <div className="bg-white/95 backdrop-blur-sm border border-stone-200 p-6 rounded-xl w-full text-center shadow-lg relative">

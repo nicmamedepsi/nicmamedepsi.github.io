@@ -102,7 +102,11 @@ export const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
             <div className="w-full h-full overflow-hidden shadow-2xl border-[6px] border-white relative z-10 animate-morph transition-all duration-1000 bg-stone-200">
               <img 
                 src="/photos/nicole-sorrindo.jpg"
-                alt="Psicóloga Nicole com um livro" 
+                alt="Psicóloga Nicole sorrindo"
+                width={420}
+                height={520}
+                fetchPriority="high"
+                loading="eager" 
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-1000"
               />
             </div>

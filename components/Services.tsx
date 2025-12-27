@@ -97,6 +97,9 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate }) => {
                         <img 
                             src="/photos/nicole-oculos.jpg"
                             alt="Atendimento Online" 
+                            width={400}
+                            height={533}
+                            loading="lazy"
                             className="rounded-2xl shadow-xl w-full border-4 border-white relative z-10 object-cover aspect-square md:aspect-[3/4]"
                         />
                         
