@@ -4,18 +4,20 @@ import { HeartHandshake, Users, Monitor, Sparkles } from 'lucide-react';
 // --- CONFIGURAÇÕES GERAIS ---
 
 export const APP_NAME = "Psicóloga Nicole"; 
-export const PROFESSIONAL_NAME = "Nicole Mamede"; 
+export const PROFESSIONAL_NAME = "Psi. Nicole Mamede";
+export const COMPLETE_NAME = "Nicole Silva Mamede";
 export const CRP_NUMBER = "01/27500"; 
 
 export const SOCIAL_LINKS = {
-  instagram: "https://instagram.com", // Substituir pelo link real
-  whatsapp: "https://wa.me/5511999999999", // Substituir pelo número real
+  instagram: "https://instagram.com/nicmamede",
+  whatsapp: "https://wa.me/556196160963", // Substituir pelo número real
+  email: "nicmamede.psi@gmail.com",
 };
 
 export const CONTACT_INFO: ContactInfo = {
-  whatsapp: "(11) 99999-9999",
+  whatsapp: "(61) 99616-0963",
   whatsappLink: SOCIAL_LINKS.whatsapp,
-  email: "contato@psicologa.com.br",
+  email: SOCIAL_LINKS.email,
   crp: CRP_NUMBER,
   location: "Atendimento Online para todo o Brasil e exterior.",
 };

@@ -48,7 +48,7 @@ export const Contact: React.FC = () => {
                   </div>
                   <div>
                     <p className="text-sm text-stone-500 font-medium">Instagram</p>
-                    <p className="text-lg font-semibold">Visitar perfil</p>
+                    <p className="text-lg font-semibold">@nicmamede</p>
                   </div>
                 </a>
 

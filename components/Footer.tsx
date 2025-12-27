@@ -1,5 +1,5 @@
 import React from 'react';
-import { PROFESSIONAL_NAME, CRP_NUMBER, CONTACT_INFO, APP_NAME, SOCIAL_LINKS } from '../constants';
+import { COMPLETE_NAME, CRP_NUMBER, CONTACT_INFO, APP_NAME, SOCIAL_LINKS } from '../constants';
 import { Flower2, Instagram } from 'lucide-react';
 import { Page } from '../types';
 
@@ -52,7 +52,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
           <div>
             <h4 className="text-white font-semibold mb-4 font-serif">Credenciais</h4>
             <ul className="space-y-2 text-sm text-brand-100/80">
-              <li>{PROFESSIONAL_NAME}</li>
+              <li>{COMPLETE_NAME}</li>
               <li>Psicóloga Clínica</li>
               <li>CRP: {CRP_NUMBER}</li>
               <li className="pt-2 text-brand-200">{CONTACT_INFO.email}</li>
@@ -61,7 +61,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
         </div>
 
         <div className="border-t border-brand-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-brand-200/60">
-          <p>&copy; {currentYear} {PROFESSIONAL_NAME}. Todos os direitos reservados.</p>
+          <p>&copy; {currentYear} {COMPLETE_NAME}. Todos os direitos reservados.</p>
           <p className="mt-2 md:mt-0 opacity-70">Desenvolvido com carinho.</p>
         </div>
       </div>
