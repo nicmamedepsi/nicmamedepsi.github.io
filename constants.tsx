@@ -3,7 +3,7 @@ import { HeartHandshake, Users, Monitor, Sparkles } from 'lucide-react';
 
 // --- CONFIGURAÇÕES GERAIS ---
 
-export const APP_NAME = "Psicóloga Nicole"; 
+export const APP_NAME = "Psicóloga Nicole Mamede";
 export const PROFESSIONAL_NAME = "Psi. Nicole Mamede";
 export const COMPLETE_NAME = "Nicole Silva Mamede";
 export const CRP_NUMBER = "01/27500"; 

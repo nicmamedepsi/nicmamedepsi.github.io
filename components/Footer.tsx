@@ -1,6 +1,6 @@
 import React from 'react';
 import { COMPLETE_NAME, CRP_NUMBER, CONTACT_INFO, APP_NAME, SOCIAL_LINKS } from '../constants';
-import { Flower2, Instagram } from 'lucide-react';
+import { Flower2 } from 'lucide-react';
 import { Page } from '../types';
 
 interface FooterProps {
@@ -24,17 +24,6 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
             <p className="text-sm mb-4 text-brand-100/80">
               Psicologia clínica baseada em evidências, com ética e acolhimento humano.
             </p>
-            <div className="flex gap-4">
-               <a 
-                 href={SOCIAL_LINKS.instagram} 
-                 target="_blank" 
-                 rel="noopener noreferrer" 
-                 className="hover:text-white text-brand-200 transition-colors"
-                 aria-label="Instagram"
-               >
-                 <Instagram size={20}/>
-               </a>
-            </div>
           </div>
 
           {/* Links */}
