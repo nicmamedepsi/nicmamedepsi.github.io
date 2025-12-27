@@ -37,7 +37,7 @@ export const About: React.FC = () => {
               <div className="absolute inset-0 bg-spring-sun/50 rounded-[30%_70%_70%_30%_/_30%_30%_70%_70%] scale-110 -rotate-6 animate-morph-slow -z-10" />
               
               <img 
-                src="/photos/nicole-livro.jpg"
+                src="/photos/nicole-livro.webp"
                 alt={`Foto de ${PROFESSIONAL_NAME} segurando um livro`} 
                 width={300}
                 height={375}

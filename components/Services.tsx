@@ -95,7 +95,7 @@ export const Services: React.FC<ServicesProps> = ({ onNavigate }) => {
                         <div className="absolute inset-0 bg-spring-iris blur-3xl opacity-20 group-hover:opacity-30 transition-opacity" />
                         
                         <img 
-                            src="/photos/nicole-oculos.jpg"
+                            src="/photos/nicole-oculos.webp"
                             alt="Atendimento Online" 
                             width={400}
                             height={533}

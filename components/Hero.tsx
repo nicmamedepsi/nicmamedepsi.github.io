@@ -101,7 +101,7 @@ export const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
             {/* Image Container */}
             <div className="w-full h-full overflow-hidden shadow-2xl border-[6px] border-white relative z-10 animate-morph transition-all duration-1000 bg-stone-200">
               <img 
-                src="/photos/nicole-sorrindo.jpg"
+                src="/photos/nicole-sorrindo.webp"
                 alt="Psicóloga Nicole sorrindo"
                 width={420}
                 height={520}
