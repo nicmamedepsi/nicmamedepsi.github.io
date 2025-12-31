@@ -1,6 +1,6 @@
 import React from 'react';
 import { COMPLETE_NAME, CRP_NUMBER, CONTACT_INFO, APP_NAME, SOCIAL_LINKS } from '../constants';
-import { Flower2 } from 'lucide-react';
+import { Flower2, CreditCard } from 'lucide-react';
 import { Page } from '../types';
 
 interface FooterProps {
@@ -51,7 +51,17 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
 
         <div className="border-t border-brand-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-brand-200/60">
           <p>&copy; {currentYear} {COMPLETE_NAME}. Todos os direitos reservados.</p>
-          <p className="mt-2 md:mt-0 opacity-70">Desenvolvido com carinho.</p>
+          <div className="flex gap-4 mt-2 md:mt-0 items-center">
+            <button 
+                onClick={() => onNavigate(Page.BUSINESS_CARD)} 
+                className="flex items-center gap-1 hover:text-white transition-colors opacity-70 hover:opacity-100"
+                title="Gerar Cartão de Visita"
+            >
+                <CreditCard size={12} />
+                <span>Cartão de Visita</span>
+            </button>
+            <p className="opacity-70">Desenvolvido com carinho.</p>
+          </div>
         </div>
       </div>
     </footer>

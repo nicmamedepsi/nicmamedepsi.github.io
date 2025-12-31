@@ -8,6 +8,7 @@ import { Services } from './components/Services';
 import { DBTSection } from './components/DBTSection';
 import { Contact } from './components/Contact';
 import { FAQ } from './components/FAQ';
+import { BusinessCard } from './components/BusinessCard';
 
 const App: React.FC = () => {
   const [activePage, setActivePage] = useState<Page>(Page.HOME);
@@ -16,6 +17,11 @@ const App: React.FC = () => {
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, [activePage]);
+
+  // Handle special print view (no header/footer)
+  if (activePage === Page.BUSINESS_CARD) {
+    return <BusinessCard onBack={() => setActivePage(Page.HOME)} />;
+  }
 
   // Simple Router Switch
   const renderContent = () => {

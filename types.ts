@@ -6,6 +6,7 @@ export enum Page {
   SERVICES = 'SERVICES',
   DBT = 'DBT',
   CONTACT = 'CONTACT',
+  BUSINESS_CARD = 'BUSINESS_CARD',
 }
 
 export interface NavItem {
