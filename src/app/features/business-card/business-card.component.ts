@@ -1,14 +1,16 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule, Location } from '@angular/common';
-import { LucideAngularModule, Phone, Mail, Instagram, ArrowLeft, Printer, Flower2 } from 'lucide-angular';
+import { LucideAngularModule, Phone, Mail, Instagram, ArrowLeft, Download, Flower2 } from 'lucide-angular';
 import { ButtonComponent } from '../../shared/components/button/button.component';
 import { COMPLETE_NAME, CRP_NUMBER, CONTACT_INFO } from '../../core/constants';
+import { PdfService } from '../../core/services/pdf.service';
 
 @Component({
     selector: 'app-business-card',
     imports: [CommonModule, LucideAngularModule, ButtonComponent],
     templateUrl: './business-card.component.html',
     styles: [`
+    /* Print styles kept for backward compatibility if user tries browser print */
     @media print {
         @page {
             margin: 0;
@@ -34,18 +36,21 @@ export class BusinessCardComponent {
     CRP_NUMBER = CRP_NUMBER;
     CONTACT_INFO = CONTACT_INFO;
 
-    readonly icons = { Phone, Mail, Instagram, ArrowLeft, Printer, Flower2 };
+    readonly icons = { Phone, Mail, Instagram, ArrowLeft, Download, Flower2 };
 
     qrData = CONTACT_INFO.whatsappLink;
     qrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(this.qrData)}&color=064e3b&bgcolor=ffffff`;
 
-    constructor(private location: Location) { }
+    constructor(
+        private location: Location,
+        private pdfService: PdfService
+    ) { }
 
     goBack() {
         this.location.back();
     }
 
-    handlePrint() {
-        window.print();
+    async downloadPdf() {
+        await this.pdfService.generateBusinessCard();
     }
 }
