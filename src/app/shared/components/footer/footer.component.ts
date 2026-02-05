@@ -4,6 +4,7 @@ import { RouterLink } from '@angular/router';
 import { LucideAngularModule, Flower2, CreditCard } from 'lucide-angular';
 import { APP_NAME, COMPLETE_NAME, CONTACT_INFO, CRP_NUMBER } from '../../../core/constants';
 import { Page } from '../../../models/types';
+import { PdfService } from '../../../core/services/pdf.service';
 
 @Component({
   selector: 'app-footer',
@@ -51,14 +52,14 @@ import { Page } from '../../../models/types';
         <div class="border-t border-brand-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-brand-200/60">
           <p>&copy; {{ currentYear }} {{ COMPLETE_NAME }}. Todos os direitos reservados.</p>
           <div class="flex gap-4 mt-2 md:mt-0 items-center">
-            <a 
-                routerLink="/cartao-visita" 
-                class="flex items-center gap-1 hover:text-white transition-colors opacity-70 hover:opacity-100 cursor-pointer"
+            <button 
+                (click)="downloadPdf()" 
+                class="flex items-center gap-1 hover:text-white transition-colors opacity-70 hover:opacity-100 cursor-pointer bg-transparent border-none p-0 text-inherit"
                 title="Gerar Cartão de Visita"
             >
                 <lucide-icon [img]="icons.CreditCard" size="12" aria-hidden="true"></lucide-icon>
                 <span>Cartão de Visita</span>
-            </a>
+            </button>
             <p class="opacity-70">Desenvolvido com carinho.</p>
           </div>
         </div>
@@ -74,4 +75,10 @@ export class FooterComponent {
   currentYear = new Date().getFullYear();
 
   readonly icons = { Flower2, CreditCard };
+
+  constructor(private pdfService: PdfService) { }
+
+  async downloadPdf() {
+    await this.pdfService.generateBusinessCard();
+  }
 }
