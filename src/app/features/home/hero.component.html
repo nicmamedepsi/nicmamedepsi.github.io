@@ -53,13 +53,13 @@
                     }
 
                     <div class="relative group cursor-help">
-                        <div
-                            class="text-sm font-serif font-bold text-stone-600 border-b border-dotted border-stone-400 hover:text-brand-700 hover:border-brand-500 transition-colors pb-0.5">
+                        <div class="text-sm font-serif font-bold text-stone-600 border-b border-dotted border-stone-400 hover:text-brand-700 hover:border-brand-500 transition-colors pb-0.5"
+                            [attr.aria-describedby]="'tooltip-' + item.acro">
                             {{ item.acro }}
                         </div>
 
                         <!-- Tooltip -->
-                        <div
+                        <div [id]="'tooltip-' + item.acro" role="tooltip"
                             class="absolute bottom-full mb-3 left-1/2 -translate-x-1/2 w-64 bg-stone-800/95 text-white p-4 rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform group-hover:-translate-y-1 z-50 text-center backdrop-blur-sm pointer-events-none">
                             <p class="font-bold text-brand-300 mb-1 text-sm">{{ item.title }}</p>
                             <p class="font-light text-stone-200 text-xs leading-relaxed">{{ item.desc }}</p>

@@ -28,7 +28,7 @@
                     [class]="theme.bg"></div>
 
                 <div class="w-16 h-16 rounded-2xl rotate-3 group-hover:rotate-12 transition-transform duration-500 flex items-center justify-center mb-6 relative z-10"
-                    [class]="theme.bg" [class]="theme.text">
+                    [ngClass]="[theme.bg, theme.text]">
                     <!-- Assuming service.icon is a Lucide component/object compat with lucide-icon -->
                     <lucide-icon [img]="service.icon" class="w-8 h-8"></lucide-icon>
                 </div>

@@ -14,7 +14,7 @@ import { Router } from '@angular/router';
         <app-header></app-header>
     }
     
-    <main>
+    <main id="main-content">
         <router-outlet></router-outlet>
     </main>
 
