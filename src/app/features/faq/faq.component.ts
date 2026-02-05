@@ -1,13 +1,13 @@
-import { Component, signal } from '@angular/core';
+import { Component, ChangeDetectionStrategy, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LucideAngularModule, ChevronDown, ChevronUp } from 'lucide-angular';
 import { FAQS } from '../../core/constants';
 
 @Component({
     selector: 'app-faq',
-    standalone: true,
     imports: [CommonModule, LucideAngularModule],
-    templateUrl: './faq.component.html'
+    templateUrl: './faq.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class FaqComponent {
     FAQS = FAQS;

@@ -1,12 +1,12 @@
-import { Component, computed, input } from '@angular/core';
+import { Component, ChangeDetectionStrategy, computed, input } from '@angular/core';
 
 type BlobColor = 'green' | 'pink' | 'yellow' | 'purple' | 'orange' | 'brand';
 type BlobVariant = 'default' | 'slow' | 'static';
 
 @Component({
     selector: 'app-blob',
-    standalone: true,
     template: '',
+    changeDetection: ChangeDetectionStrategy.OnPush,
     host: {
         'class': 'absolute rounded-full mix-blend-multiply filter blur-[80px] opacity-70',
         '[class]': 'dynamicClasses()',

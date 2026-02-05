@@ -1,13 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LucideAngularModule, CheckCircle2, Scale, Heart, ArrowRightLeft } from 'lucide-angular';
 import { BlobComponent } from '../../shared/components/blob/blob.component';
 
 @Component({
     selector: 'app-dbt-section',
-    standalone: true,
     imports: [CommonModule, LucideAngularModule, BlobComponent],
-    templateUrl: './dbt-section.component.html'
+    templateUrl: './dbt-section.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class DbtSectionComponent {
     readonly icons = { CheckCircle2, Scale, Heart, ArrowRightLeft };

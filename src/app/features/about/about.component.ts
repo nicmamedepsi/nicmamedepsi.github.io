@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LucideAngularModule, Quote, GraduationCap, BookOpen, Heart, Award } from 'lucide-angular';
 import { BlobComponent } from '../../shared/components/blob/blob.component';
@@ -7,9 +7,9 @@ import { PROFESSIONAL_NAME, CRP_NUMBER, QUOTE_TEXT } from '../../core/constants'
 
 @Component({
     selector: 'app-about',
-    standalone: true,
     imports: [CommonModule, LucideAngularModule, BlobComponent, HighlightComponent],
-    templateUrl: './about.component.html'
+    templateUrl: './about.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AboutComponent {
     PROFESSIONAL_NAME = PROFESSIONAL_NAME;

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { LucideAngularModule, Wifi, ArrowRight } from 'lucide-angular';
@@ -7,9 +7,9 @@ import { SERVICES, ONLINE_THERAPY_TEXT } from '../../core/constants';
 
 @Component({
     selector: 'app-services',
-    standalone: true,
     imports: [CommonModule, RouterLink, LucideAngularModule, BlobComponent],
-    templateUrl: './services.component.html'
+    templateUrl: './services.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ServicesComponent {
     SERVICES = SERVICES;

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule, Location } from '@angular/common';
 import { LucideAngularModule, Phone, Mail, Instagram, ArrowLeft, Printer, Flower2 } from 'lucide-angular';
 import { ButtonComponent } from '../../shared/components/button/button.component';
@@ -6,7 +6,6 @@ import { COMPLETE_NAME, CRP_NUMBER, CONTACT_INFO } from '../../core/constants';
 
 @Component({
     selector: 'app-business-card',
-    standalone: true,
     imports: [CommonModule, LucideAngularModule, ButtonComponent],
     templateUrl: './business-card.component.html',
     styles: [`
@@ -27,7 +26,8 @@ import { COMPLETE_NAME, CRP_NUMBER, CONTACT_INFO } from '../../core/constants';
             display: block;
         }
     }
-  `]
+  `],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class BusinessCardComponent {
     COMPLETE_NAME = COMPLETE_NAME;

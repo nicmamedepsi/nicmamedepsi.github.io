@@ -1,12 +1,12 @@
-import { Component, computed, input } from '@angular/core';
+import { Component, ChangeDetectionStrategy, computed, input } from '@angular/core';
 
 type ButtonVariant = 'primary' | 'outline' | 'ghost';
 type ButtonSize = 'sm' | 'md' | 'lg';
 
 @Component({
     selector: 'button[app-button], a[app-button]',
-    standalone: true,
     template: '<ng-content></ng-content>',
+    changeDetection: ChangeDetectionStrategy.OnPush,
     host: {
         'class': 'inline-flex items-center justify-center rounded-full font-medium transition-all focus:outline-none focus:ring-2 focus:ring-spring-iris focus:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none active:scale-95 cursor-pointer',
         '[class]': 'dynamicClasses()'

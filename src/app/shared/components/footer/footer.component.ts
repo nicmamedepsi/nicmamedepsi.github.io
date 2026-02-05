@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { LucideAngularModule, Flower2, CreditCard } from 'lucide-angular';
@@ -6,10 +6,10 @@ import { APP_NAME, COMPLETE_NAME, CONTACT_INFO, CRP_NUMBER } from '../../../core
 import { Page } from '../../../models/types';
 
 @Component({
-    selector: 'app-footer',
-    standalone: true,
-    imports: [CommonModule, RouterLink, LucideAngularModule],
-    template: `
+  selector: 'app-footer',
+  imports: [CommonModule, RouterLink, LucideAngularModule],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: `
     <footer class="bg-brand-900 text-brand-50 py-12">
       <div class="container mx-auto px-4 md:px-6">
         <div class="grid md:grid-cols-3 gap-8 mb-8">
@@ -67,11 +67,11 @@ import { Page } from '../../../models/types';
   `
 })
 export class FooterComponent {
-    APP_NAME = APP_NAME;
-    COMPLETE_NAME = COMPLETE_NAME;
-    CRP_NUMBER = CRP_NUMBER;
-    CONTACT_INFO = CONTACT_INFO;
-    currentYear = new Date().getFullYear();
+  APP_NAME = APP_NAME;
+  COMPLETE_NAME = COMPLETE_NAME;
+  CRP_NUMBER = CRP_NUMBER;
+  CONTACT_INFO = CONTACT_INFO;
+  currentYear = new Date().getFullYear();
 
-    readonly icons = { Flower2, CreditCard };
+  readonly icons = { Flower2, CreditCard };
 }

@@ -1,12 +1,12 @@
-import { Component, computed, input } from '@angular/core';
+import { Component, ChangeDetectionStrategy, computed, input } from '@angular/core';
 
 type HighlightColor = 'yellow' | 'pink' | 'purple' | 'green';
 
 @Component({
     selector: 'app-highlight',
-    standalone: true,
     template: '<span [class]="dynamicClasses()"><ng-content></ng-content></span>',
-    styles: [`:host { display: inline; }`]
+    styles: [`:host { display: inline; }`],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HighlightComponent {
     color = input<HighlightColor>('yellow');

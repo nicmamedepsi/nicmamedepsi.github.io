@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { LucideAngularModule, ArrowRight, Sparkles } from 'lucide-angular';
@@ -9,9 +9,9 @@ import { Page } from '../../models/types';
 
 @Component({
     selector: 'app-hero',
-    standalone: true,
     imports: [CommonModule, RouterLink, LucideAngularModule, ButtonComponent, BlobComponent],
-    templateUrl: './hero.component.html'
+    templateUrl: './hero.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HeroComponent {
     HERO_TEXT = HERO_TEXT;

@@ -1,4 +1,4 @@
-import { Component, signal, HostListener } from '@angular/core';
+import { Component, ChangeDetectionStrategy, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { LucideAngularModule, Menu, X, Flower2, MessageCircle } from 'lucide-angular';
@@ -7,9 +7,12 @@ import { PROFESSIONAL_NAME } from '../../../core/constants';
 
 @Component({
     selector: 'app-header',
-    standalone: true,
     imports: [CommonModule, RouterLink, RouterLinkActive, LucideAngularModule],
     templateUrl: './header.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    host: {
+        '(window:scroll)': 'onWindowScroll()'
+    }
 })
 export class HeaderComponent {
     professionalName = PROFESSIONAL_NAME;
@@ -27,7 +30,6 @@ export class HeaderComponent {
         { id: Page.CONTACT, label: 'Contato', path: '/contato' },
     ];
 
-    @HostListener('window:scroll', [])
     onWindowScroll() {
         this.scrolled.set(window.scrollY > 20);
     }
