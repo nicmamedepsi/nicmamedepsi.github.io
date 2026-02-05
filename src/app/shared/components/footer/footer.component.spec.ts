@@ -1,11 +1,16 @@
-import { describe, it, expect, beforeEach } from 'vitest';
+import { describe, it, expect, beforeEach, vi } from 'vitest';
 import { FooterComponent } from './footer.component';
+import { PdfService } from '../../../core/services/pdf.service';
 
 describe('FooterComponent', () => {
     let component: FooterComponent;
+    let mockPdfService: { generateBusinessCard: ReturnType<typeof vi.fn> };
 
     beforeEach(() => {
-        component = new FooterComponent();
+        mockPdfService = {
+            generateBusinessCard: vi.fn().mockResolvedValue(undefined)
+        };
+        component = new FooterComponent(mockPdfService as unknown as PdfService);
     });
 
     it('should have APP_NAME defined', () => {
@@ -37,5 +42,10 @@ describe('FooterComponent', () => {
         expect(component.icons).toBeDefined();
         expect(component.icons.Flower2).toBeDefined();
         expect(component.icons.CreditCard).toBeDefined();
+    });
+
+    it('should call pdfService.generateBusinessCard when downloadPdf is called', async () => {
+        await component.downloadPdf();
+        expect(mockPdfService.generateBusinessCard).toHaveBeenCalledTimes(1);
     });
 });
