@@ -16,10 +16,12 @@
 
                     <div class="space-y-6">
                         <a [href]="CONTACT_INFO.whatsappLink" target="_blank" rel="noopener noreferrer"
-                            class="flex items-center gap-4 text-stone-700 hover:text-spring-iris transition-colors group">
+                            class="flex items-center gap-4 text-stone-700 hover:text-spring-iris transition-colors group"
+                            aria-label="WhatsApp: {{ CONTACT_INFO.whatsapp }}">
                             <div
                                 class="w-12 h-12 bg-spring-iris/10 rounded-full flex items-center justify-center group-hover:bg-spring-iris/20 transition-colors">
-                                <lucide-icon [img]="icons.MessageCircle" class="text-spring-iris"></lucide-icon>
+                                <lucide-icon [img]="icons.MessageCircle" class="text-spring-iris"
+                                    aria-hidden="true"></lucide-icon>
                             </div>
                             <div>
                                 <p class="text-sm text-stone-500 font-medium">WhatsApp</p>
@@ -28,10 +30,12 @@
                         </a>
 
                         <a [href]="SOCIAL_LINKS.instagram" target="_blank" rel="noopener noreferrer"
-                            class="flex items-center gap-4 text-stone-700 hover:text-spring-tulip transition-colors group">
+                            class="flex items-center gap-4 text-stone-700 hover:text-spring-tulip transition-colors group"
+                            aria-label="Instagram: @nicmamede">
                             <div
                                 class="w-12 h-12 bg-spring-tulip/10 rounded-full flex items-center justify-center group-hover:bg-spring-tulip/20 transition-colors">
-                                <lucide-icon [img]="icons.Instagram" class="text-spring-tulip"></lucide-icon>
+                                <lucide-icon [img]="icons.Instagram" class="text-spring-tulip"
+                                    aria-hidden="true"></lucide-icon>
                             </div>
                             <div>
                                 <p class="text-sm text-stone-500 font-medium">Instagram</p>
@@ -40,10 +44,11 @@
                         </a>
 
                         <a [href]="'mailto:' + CONTACT_INFO.email"
-                            class="flex items-center gap-4 text-stone-700 hover:text-spring-iris transition-colors group">
+                            class="flex items-center gap-4 text-stone-700 hover:text-spring-iris transition-colors group"
+                            aria-label="E-mail: {{ CONTACT_INFO.email }}">
                             <div
                                 class="w-12 h-12 bg-stone-100 rounded-full flex items-center justify-center group-hover:bg-stone-200 transition-colors">
-                                <lucide-icon [img]="icons.Mail" class="text-stone-600"></lucide-icon>
+                                <lucide-icon [img]="icons.Mail" class="text-stone-600" aria-hidden="true"></lucide-icon>
                             </div>
                             <div>
                                 <p class="text-sm text-stone-500 font-medium">E-mail</p>
@@ -53,7 +58,8 @@
 
                         <div class="flex items-center gap-4 text-stone-700">
                             <div class="w-12 h-12 bg-stone-100 rounded-full flex items-center justify-center">
-                                <lucide-icon [img]="icons.MapPin" class="text-stone-600"></lucide-icon>
+                                <lucide-icon [img]="icons.MapPin" class="text-stone-600"
+                                    aria-hidden="true"></lucide-icon>
                             </div>
                             <div>
                                 <p class="text-sm text-stone-500 font-medium">Localização</p>
@@ -63,9 +69,11 @@
                     </div>
 
                     <div class="pt-6">
-                        <a [href]="CONTACT_INFO.whatsappLink" target="_blank" rel="noopener noreferrer">
+                        <a [href]="CONTACT_INFO.whatsappLink" target="_blank" rel="noopener noreferrer"
+                            aria-label="Agendar sessão pelo WhatsApp">
                             <button app-button [fullWidth]="true" size="lg">
-                                <lucide-icon [img]="icons.MessageCircle" class="mr-2 h-5 w-5"></lucide-icon>
+                                <lucide-icon [img]="icons.MessageCircle" class="mr-2 h-5 w-5"
+                                    aria-hidden="true"></lucide-icon>
                                 Agendar pelo WhatsApp
                             </button>
                         </a>

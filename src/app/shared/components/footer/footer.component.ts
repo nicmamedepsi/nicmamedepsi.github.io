@@ -17,7 +17,7 @@ import { Page } from '../../../models/types';
           <!-- Brand -->
           <div>
             <div class="flex items-center gap-2 mb-4 text-white">
-              <lucide-icon [img]="icons.Flower2" class="w-5 h-5 text-brand-300"></lucide-icon>
+              <lucide-icon [img]="icons.Flower2" class="w-5 h-5 text-brand-300" aria-hidden="true"></lucide-icon>
               <span class="font-serif text-lg font-semibold tracking-wide">{{ APP_NAME }}</span>
             </div>
             <p class="text-sm mb-4 text-brand-100/80">
@@ -26,7 +26,7 @@ import { Page } from '../../../models/types';
           </div>
 
           <!-- Links -->
-          <div>
+          <nav aria-label="Navegação do site">
             <h4 class="text-white font-semibold mb-4 font-serif">Navegação</h4>
             <ul class="space-y-2 text-sm text-brand-100/80">
               <li><a routerLink="/" class="hover:text-white transition-colors cursor-pointer">Início</a></li>
@@ -34,7 +34,7 @@ import { Page } from '../../../models/types';
               <li><a routerLink="/atuacao" class="hover:text-white transition-colors cursor-pointer">Serviços</a></li>
               <li><a routerLink="/contato" class="hover:text-white transition-colors cursor-pointer">Contato</a></li>
             </ul>
-          </div>
+          </nav>
 
           <!-- Professional Info -->
           <div>
@@ -56,7 +56,7 @@ import { Page } from '../../../models/types';
                 class="flex items-center gap-1 hover:text-white transition-colors opacity-70 hover:opacity-100 cursor-pointer"
                 title="Gerar Cartão de Visita"
             >
-                <lucide-icon [img]="icons.CreditCard" size="12"></lucide-icon>
+                <lucide-icon [img]="icons.CreditCard" size="12" aria-hidden="true"></lucide-icon>
                 <span>Cartão de Visita</span>
             </a>
             <p class="opacity-70">Desenvolvido com carinho.</p>

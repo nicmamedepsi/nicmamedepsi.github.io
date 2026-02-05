@@ -12,7 +12,7 @@
         <div class="flex items-center gap-3 cursor-pointer group" routerLink="/" (click)="closeMenu()">
             <div
                 class="p-2 bg-gradient-to-br from-brand-100 to-brand-50 rounded-xl group-hover:scale-110 transition-transform duration-300 shadow-sm">
-                <lucide-icon [img]="icons.Flower2" class="w-6 h-6 text-brand-600"></lucide-icon>
+                <lucide-icon [img]="icons.Flower2" class="w-6 h-6 text-brand-600" aria-hidden="true"></lucide-icon>
             </div>
             <span
                 class="font-serif text-xl md:text-2xl font-semibold text-stone-800 tracking-tight group-hover:text-brand-800 transition-colors">
@@ -34,7 +34,7 @@
             }
             <a routerLink="/contato"
                 class="ml-4 bg-spring-iris text-white px-6 py-2.5 rounded-full text-sm font-bold hover:bg-violet-700 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 shadow-md flex items-center gap-2 shadow-spring-iris/20">
-                <lucide-icon [img]="icons.MessageCircle" size="16"></lucide-icon>
+                <lucide-icon [img]="icons.MessageCircle" size="16" aria-hidden="true"></lucide-icon>
                 Agendar
             </a>
         </nav>
@@ -44,7 +44,7 @@
             <a routerLink="/contato"
                 class="p-2.5 text-spring-iris bg-spring-iris/10 hover:bg-spring-iris/20 rounded-full transition-colors flex items-center justify-center"
                 aria-label="Ir para contato" (click)="closeMenu()">
-                <lucide-icon [img]="icons.MessageCircle" size="22"></lucide-icon>
+                <lucide-icon [img]="icons.MessageCircle" size="22" aria-hidden="true"></lucide-icon>
             </a>
 
             <button
@@ -52,9 +52,9 @@
                 (click)="toggleMenu()" [attr.aria-label]="isMenuOpen() ? 'Fechar menu' : 'Abrir menu'"
                 [attr.aria-expanded]="isMenuOpen()">
                 @if (isMenuOpen()) {
-                <lucide-icon [img]="icons.X" size="24"></lucide-icon>
+                <lucide-icon [img]="icons.X" size="24" aria-hidden="true"></lucide-icon>
                 } @else {
-                <lucide-icon [img]="icons.Menu" size="24"></lucide-icon>
+                <lucide-icon [img]="icons.Menu" size="24" aria-hidden="true"></lucide-icon>
                 }
             </button>
         </div>
