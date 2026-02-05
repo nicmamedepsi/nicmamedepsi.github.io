@@ -1,0 +1,37 @@
+<section class="py-20 bg-white border-t border-stone-100">
+    <div class="container mx-auto px-4 md:px-6 max-w-3xl">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-serif text-stone-800 mb-4">Dúvidas Frequentes</h2>
+            <p class="text-stone-600">Respostas para as perguntas mais comuns sobre o processo terapêutico.</p>
+        </div>
+
+        <div class="space-y-4">
+            @for (faq of FAQS; track faq.question; let index = $index) {
+            <div class="border rounded-2xl transition-all duration-300" [class.border-brand-200]="openIndex() === index"
+                [class.bg-brand-50/30]="openIndex() === index" [class.border-stone-100]="openIndex() !== index"
+                [class.bg-white]="openIndex() !== index" [class.hover:border-brand-100]="openIndex() !== index">
+                <button class="w-full flex items-center justify-between p-5 text-left focus:outline-none"
+                    (click)="toggleFAQ(index)">
+                    <span class="font-medium text-lg" [class.text-brand-800]="openIndex() === index"
+                        [class.text-stone-700]="openIndex() !== index">
+                        {{ faq.question }}
+                    </span>
+                    @if (openIndex() === index) {
+                    <lucide-icon [img]="icons.ChevronUp" class="text-brand-500"></lucide-icon>
+                    } @else {
+                    <lucide-icon [img]="icons.ChevronDown" class="text-stone-400"></lucide-icon>
+                    }
+                </button>
+
+                <div class="overflow-hidden transition-all duration-300 ease-in-out"
+                    [class.max-h-48]="openIndex() === index" [class.opacity-100]="openIndex() === index"
+                    [class.max-h-0]="openIndex() !== index" [class.opacity-0]="openIndex() !== index">
+                    <div class="p-5 pt-0 text-stone-600 leading-relaxed">
+                        {{ faq.answer }}
+                    </div>
+                </div>
+            </div>
+            }
+        </div>
+    </div>
+</section>

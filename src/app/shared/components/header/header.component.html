@@ -1,0 +1,75 @@
+<header class="sticky top-0 z-50 w-full transition-all duration-300" [class.bg-white-90]="scrolled() || isMenuOpen()"
+    [class.backdrop-blur-md]="scrolled() || isMenuOpen()" [class.border-b]="scrolled() || isMenuOpen()"
+    [class.border-stone-200]="scrolled() || isMenuOpen()" [class.shadow-sm]="scrolled() || isMenuOpen()"
+    [class.bg-transparent]="!scrolled() && !isMenuOpen()" [class.border-transparent]="!scrolled() && !isMenuOpen()">
+    <div class="container mx-auto px-4 md:px-6 h-20 flex items-center justify-between">
+
+        <!-- Logo Area -->
+        <div class="flex items-center gap-3 cursor-pointer group" routerLink="/" (click)="closeMenu()">
+            <div
+                class="p-2 bg-gradient-to-br from-brand-100 to-brand-50 rounded-xl group-hover:scale-110 transition-transform duration-300 shadow-sm">
+                <lucide-icon [img]="icons.Flower2" class="w-6 h-6 text-brand-600"></lucide-icon>
+            </div>
+            <span
+                class="font-serif text-xl md:text-2xl font-semibold text-stone-800 tracking-tight group-hover:text-brand-800 transition-colors">
+                {{ professionalName }}
+            </span>
+        </div>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:flex items-center gap-8">
+            @for (item of navItems; track item.id) {
+            <a [routerLink]="item.path" routerLinkActive="text-spring-iris font-bold"
+                [routerLinkActiveOptions]="{exact: item.path === '/'}"
+                class="text-sm font-medium transition-all duration-300 relative py-1 hover:text-spring-iris text-stone-600 group">
+                {{ item.label }}
+                <span
+                    class="absolute bottom-0 left-0 h-0.5 bg-spring-iris rounded-full transition-all duration-300 w-0 group-hover:w-full"
+                    routerLinkActive="w-full" [routerLinkActiveOptions]="{exact: item.path === '/'}"></span>
+            </a>
+            }
+            <a routerLink="/contato"
+                class="ml-4 bg-spring-iris text-white px-6 py-2.5 rounded-full text-sm font-bold hover:bg-violet-700 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 shadow-md flex items-center gap-2 shadow-spring-iris/20">
+                <lucide-icon [img]="icons.MessageCircle" size="16"></lucide-icon>
+                Agendar
+            </a>
+        </nav>
+
+        <!-- Mobile Actions -->
+        <div class="flex items-center gap-3 md:hidden">
+            <a routerLink="/contato"
+                class="p-2.5 text-spring-iris bg-spring-iris/10 hover:bg-spring-iris/20 rounded-full transition-colors flex items-center justify-center"
+                aria-label="Ir para contato" (click)="closeMenu()">
+                <lucide-icon [img]="icons.MessageCircle" size="22"></lucide-icon>
+            </a>
+
+            <button
+                class="p-2.5 text-stone-600 hover:bg-stone-100 rounded-full transition-colors flex items-center justify-center"
+                (click)="toggleMenu()" aria-label="Toggle menu">
+                @if (isMenuOpen()) {
+                <lucide-icon [img]="icons.X" size="24"></lucide-icon>
+                } @else {
+                <lucide-icon [img]="icons.Menu" size="24"></lucide-icon>
+                }
+            </button>
+        </div>
+    </div>
+
+    <!-- Mobile Navigation Dropdown -->
+    @if (isMenuOpen()) {
+    <div
+        class="md:hidden absolute top-full left-0 w-full bg-white/95 backdrop-blur-xl border-b border-stone-100 shadow-xl animate-slideUp">
+        <div class="flex flex-col p-4 gap-2">
+            @for (item of navItems; track item.id) {
+            <a [routerLink]="item.path"
+                routerLinkActive="bg-spring-iris/10 text-spring-iris font-bold border border-spring-iris/20 shadow-sm"
+                [routerLinkActiveOptions]="{exact: item.path === '/'}"
+                class="text-left w-full py-4 px-6 rounded-2xl transition-all duration-200 text-stone-600 hover:bg-stone-50 font-medium"
+                (click)="closeMenu()">
+                {{ item.label }}
+            </a>
+            }
+        </div>
+    </div>
+    }
+</header>

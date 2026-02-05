@@ -1,0 +1,124 @@
+<section class="py-24 bg-paper/50 relative overflow-hidden">
+    <app-blob color="purple" class="top-1/4 left-0 w-64 h-64 opacity-60 animate-float pointer-events-none"></app-blob>
+    <app-blob color="yellow" class="bottom-1/4 right-0 w-96 h-96 opacity-60 animate-float pointer-events-none"
+        delay="3s"></app-blob>
+
+    <div class="container mx-auto px-4 md:px-6 relative z-10">
+
+        <!-- Intro -->
+        <div class="max-w-4xl mx-auto text-center mb-20">
+            <div
+                class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-spring-iris/20 text-spring-iris text-sm font-bold mb-6 shadow-sm">
+                <lucide-icon [img]="icons.Heart" size="16" class="fill-spring-iris"></lucide-icon> Abordagem Principal
+            </div>
+            <h2 class="text-4xl md:text-6xl font-serif text-stone-900 mb-8 leading-tight">
+                Terapia Comportamental Dialética (DBT)
+            </h2>
+            <p class="text-xl md:text-2xl text-stone-700 leading-relaxed font-light">
+                Uma abordagem baseada em evidências que ajuda você a <span
+                    class="font-serif italic text-brand-700 font-medium bg-gradient-to-r from-brand-200/50 to-brand-200/50 bg-[length:100%_0.5em] bg-no-repeat bg-[0%_90%] decoration-clone px-1 rounded-sm">
+                    construir uma vida que valha a pena ser vivida
+                </span>.
+            </p>
+        </div>
+
+        <!-- The Balance Visual -->
+        <div class="grid lg:grid-cols-[1fr_auto_1fr] gap-8 items-center mb-24 max-w-6xl mx-auto">
+
+            <div
+                class="bg-white p-8 rounded-[2.5rem] shadow-lg border border-spring-leaf/20 relative overflow-hidden group hover:-translate-y-2 transition-all duration-500">
+                <div
+                    class="absolute top-0 right-0 w-32 h-32 bg-spring-leaf/10 rounded-full blur-2xl group-hover:bg-spring-leaf/20 transition-colors">
+                </div>
+                <span class="text-sm font-bold tracking-widest text-spring-leaf uppercase mb-2 block">O pilar da</span>
+                <h3 class="text-3xl font-serif text-stone-800 mb-4">Aceitação</h3>
+                <p class="text-stone-600 text-lg leading-relaxed">
+                    Validar sua história e aceitar a realidade exatamente como ela é neste momento, sem julgamentos.
+                </p>
+            </div>
+
+            <div class="flex flex-col items-center justify-center gap-4 text-center px-4">
+                <div
+                    class="w-16 h-16 bg-spring-iris/10 rounded-full flex items-center justify-center text-spring-iris animate-pulse">
+                    <lucide-icon [img]="icons.Scale" size="32"></lucide-icon>
+                </div>
+                <div class="flex flex-col items-center">
+                    <span class="font-serif italic text-2xl text-stone-800">Dialética</span>
+                    <lucide-icon [img]="icons.ArrowRightLeft" class="text-stone-400 mt-2" size="20"></lucide-icon>
+                    <span class="text-xs font-bold text-stone-400 uppercase tracking-widest mt-1">Equilíbrio</span>
+                </div>
+            </div>
+
+            <div
+                class="bg-white p-8 rounded-[2.5rem] shadow-lg border border-spring-poppy/20 relative overflow-hidden group hover:-translate-y-2 transition-all duration-500">
+                <div
+                    class="absolute top-0 right-0 w-32 h-32 bg-spring-poppy/10 rounded-full blur-2xl group-hover:bg-spring-poppy/20 transition-colors">
+                </div>
+                <span class="text-sm font-bold tracking-widest text-spring-poppy uppercase mb-2 block">O pilar da</span>
+                <h3 class="text-3xl font-serif text-stone-800 mb-4">Mudança</h3>
+                <p class="text-stone-600 text-lg leading-relaxed">
+                    Trabalhar ativamente para transformar comportamentos que causam sofrimento e impedem seus objetivos.
+                </p>
+            </div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-12 lg:gap-20 items-start">
+
+            <!-- Skills Section -->
+            <div class="space-y-8">
+                <div>
+                    <h3 class="text-3xl font-serif text-stone-900 mb-4">Treinamento de Habilidades</h3>
+                    <p class="text-stone-600 text-lg">
+                        Diferente da terapia tradicional, a DBT envolve aprender ferramentas práticas para lidar com o
+                        dia a dia:
+                    </p>
+                </div>
+
+                <div class="grid gap-4">
+                    @for (item of skills; track item.title) {
+                    <div
+                        class="bg-white p-5 rounded-2xl shadow-sm hover:shadow-md border border-stone-100 flex items-center gap-5 transition-all duration-300 hover:scale-[1.02]">
+                        <div class="w-3 h-12 rounded-full opacity-80" [class]="item.color"></div>
+                        <div>
+                            <h4 class="font-serif font-bold text-stone-800 text-lg">{{ item.title }}</h4>
+                            <p class="text-stone-500 text-sm">{{ item.desc }}</p>
+                        </div>
+                    </div>
+                    }
+                </div>
+            </div>
+
+            <!-- Benefits/Indications -->
+            <div
+                class="bg-gradient-to-br from-brand-700 to-brand-900 rounded-[3rem] p-10 md:p-14 text-white relative overflow-hidden shadow-2xl h-full flex flex-col justify-center">
+                <app-blob color="brand"
+                    class="top-0 right-0 w-64 h-64 bg-white/10 opacity-100 pointer-events-none"></app-blob>
+                <app-blob color="green"
+                    class="bottom-0 left-0 w-64 h-64 bg-brand-500/50 opacity-100 pointer-events-none"></app-blob>
+
+                <div class="relative z-10">
+                    <h3 class="text-3xl font-serif mb-8 border-b border-white/20 pb-4 inline-block">Para quem é
+                        indicada?</h3>
+                    <ul class="space-y-4">
+                        @for (item of indications; track item) {
+                        <li class="flex items-start gap-3 group">
+                            <lucide-icon [img]="icons.CheckCircle2"
+                                class="text-brand-300 flex-shrink-0 mt-0.5 group-hover:text-white transition-colors"
+                                size="20"></lucide-icon>
+                            <span
+                                class="font-medium text-brand-50/90 group-hover:text-white transition-colors leading-snug">{{
+                                item }}</span>
+                        </li>
+                        }
+                    </ul>
+
+                    <div class="mt-10 pt-6 border-t border-white/10 text-center">
+                        <p class="text-brand-200 text-sm italic">
+                            "Não é sobre consertar o que está quebrado, mas construir o que falta."
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

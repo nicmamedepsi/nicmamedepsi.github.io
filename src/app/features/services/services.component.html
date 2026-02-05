@@ -1,0 +1,109 @@
+<section class="py-24 bg-white relative overflow-hidden">
+    <app-blob color="brand"
+        class="top-0 right-0 w-[600px] h-[600px] -translate-y-1/2 translate-x-1/3 pointer-events-none"
+        variant="static"></app-blob>
+    <app-blob color="purple"
+        class="bottom-0 left-0 w-[500px] h-[500px] translate-y-1/2 -translate-x-1/3 opacity-20 pointer-events-none"
+        variant="static"></app-blob>
+
+    <div class="container mx-auto px-4 md:px-6 relative z-10">
+        <div class="text-center mb-16">
+            <span
+                class="text-brand-700 text-sm font-bold tracking-widest uppercase bg-brand-100 px-4 py-1.5 rounded-full mb-4 inline-block">Áreas
+                de Atuação</span>
+            <h2 class="text-4xl md:text-5xl font-serif text-stone-900 mb-6">Como posso te ajudar</h2>
+            <p class="text-stone-600 max-w-2xl mx-auto text-lg leading-relaxed">
+                Ofereço um espaço seguro e profissional, utilizando abordagens baseadas em evidências para promover
+                mudanças reais na sua vida.
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+            @for (service of SERVICES; track service.title; let i = $index) {
+            @let theme = getTheme(i);
+            <div class="bg-white p-8 rounded-[2rem] shadow-sm hover:shadow-xl transition-all duration-500 border-2 flex flex-col items-center text-center group hover:-translate-y-2 relative overflow-hidden"
+                [class]="theme.border">
+                <!-- Subtle background gradient on hover -->
+                <div class="absolute inset-0 opacity-0 group-hover:opacity-30 transition-opacity duration-500"
+                    [class]="theme.bg"></div>
+
+                <div class="w-16 h-16 rounded-2xl rotate-3 group-hover:rotate-12 transition-transform duration-500 flex items-center justify-center mb-6 relative z-10"
+                    [class]="theme.bg" [class]="theme.text">
+                    <!-- Assuming service.icon is a Lucide component/object compat with lucide-icon -->
+                    <lucide-icon [img]="service.icon" class="w-8 h-8"></lucide-icon>
+                </div>
+
+                <h3 class="text-xl font-serif text-stone-800 mb-3 font-bold relative z-10">{{ service.title }}</h3>
+                <p class="text-stone-600 text-sm leading-relaxed relative z-10 opacity-90">{{ service.description }}</p>
+            </div>
+            }
+        </div>
+
+        <!-- Online Therapy Section - LIGHT THEME UPDATE -->
+        <div class="mt-24">
+            <div
+                class="bg-white rounded-[3rem] p-8 md:p-14 shadow-2xl border border-brand-100 relative overflow-hidden flex flex-col md:flex-row items-center gap-12">
+
+                <!-- Background soft decoration -->
+                <div
+                    class="absolute top-0 right-0 w-full h-full bg-gradient-to-br from-brand-50/50 to-transparent opacity-50 pointer-events-none">
+                </div>
+                <app-blob color="yellow"
+                    class="top-0 right-0 w-[400px] h-[400px] translate-x-1/3 -translate-y-1/3 opacity-30 pointer-events-none"
+                    variant="static"></app-blob>
+                <app-blob color="pink"
+                    class="bottom-0 left-0 w-80 h-80 -translate-x-1/3 translate-y-1/3 opacity-30 pointer-events-none"
+                    variant="static"></app-blob>
+
+                <div class="flex-1 relative z-10 space-y-6">
+                    <div
+                        class="inline-flex items-center gap-2 text-brand-600 font-bold uppercase tracking-wider text-xs border border-brand-200 bg-white px-3 py-1 rounded-full shadow-sm">
+                        <lucide-icon [img]="icons.Wifi" size="14"></lucide-icon>
+                        Sem Fronteiras
+                    </div>
+                    <h3 class="text-3xl md:text-4xl font-serif leading-tight text-stone-800">{{
+                        ONLINE_THERAPY_TEXT.title }}</h3>
+                    <div class="text-stone-600 leading-relaxed whitespace-pre-line text-lg font-light">
+                        {{ ONLINE_THERAPY_TEXT.description }}
+                    </div>
+
+                    <div class="pt-2">
+                        <a routerLink="/contato"
+                            class="inline-flex items-center text-spring-iris font-semibold border-b-2 border-spring-iris/20 pb-0.5 hover:border-spring-iris hover:text-spring-iris/80 transition-all cursor-pointer group">
+                            Entre em contato para agendar
+                            <lucide-icon [img]="icons.ArrowRight" size="16"
+                                class="ml-2 group-hover:translate-x-1 transition-transform"></lucide-icon>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="flex-1 w-full relative group perspective-1000 flex justify-center">
+                    <div
+                        class="relative transform group-hover:rotate-y-6 transition-transform duration-700 ease-out preserve-3d max-w-md w-full">
+                        <!-- Changed glow to be soft/pastel instead of dark -->
+                        <div
+                            class="absolute inset-0 bg-spring-iris blur-3xl opacity-20 group-hover:opacity-30 transition-opacity">
+                        </div>
+
+                        <img src="/photos/nicole-oculos.webp" alt="Atendimento Online" width="400" height="533"
+                            loading="lazy"
+                            class="rounded-2xl shadow-xl w-full border-4 border-white relative z-10 object-cover aspect-square md:aspect-[3/4]" />
+
+                        <!-- Floating Tag -->
+                        <div
+                            class="absolute -bottom-6 -left-6 bg-white/90 backdrop-blur-md text-stone-900 p-4 rounded-xl shadow-lg border border-stone-100 z-20 flex items-center gap-3 animate-float">
+                            <div class="relative">
+                                <div class="w-3 h-3 bg-brand-500 rounded-full"></div>
+                                <div class="absolute inset-0 bg-brand-500 rounded-full animate-ping opacity-75"></div>
+                            </div>
+                            <div>
+                                <p class="text-xs font-bold uppercase text-stone-400">Modalidade</p>
+                                <p class="font-serif font-bold text-brand-800">Online & Segura</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
