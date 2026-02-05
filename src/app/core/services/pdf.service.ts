@@ -1,9 +1,7 @@
 import { Injectable } from '@angular/core';
-import { jsPDF } from 'jspdf';
-import * as QRCode from 'qrcode';
 import { CONTACT_INFO, COMPLETE_NAME, CRP_NUMBER } from '../constants';
 import { Flower2, Phone, Mail, Instagram, LucideIconData } from 'lucide-angular';
-import 'svg2pdf.js';
+
 
 @Injectable({
     providedIn: 'root'
@@ -14,6 +12,22 @@ export class PdfService {
 
     async generateBusinessCard() {
         try {
+            console.log('Carregando bibliotecas de PDF sob demanda...');
+
+            // Lazy load heavy dependencies
+            const [
+                { jsPDF },
+                QRCode,
+                // svg2pdf.js auto-registers itself to jsPDF when imported, so we just need to import the side-effect
+                _svg2pdf
+            ] = await Promise.all([
+                import('jspdf'),
+                import('qrcode'),
+                import('svg2pdf.js')
+            ]);
+
+            console.log('Bibliotecas carregadas.');
+
             // 90mm x 50mm landscape
             const doc = new jsPDF({
                 orientation: 'landscape',
@@ -27,11 +41,11 @@ export class PdfService {
             console.log('Fontes carregadas.');
 
             // --- FRONT SIDE ---
-            await this.drawFrontSide(doc);
+            await this.drawFrontSide(doc, QRCode);
 
             // --- BACK SIDE ---
             doc.addPage();
-            await this.drawBackSide(doc);
+            await this.drawBackSide(doc, QRCode);
 
             doc.save('cartao-visitas-nicole-mamede.pdf');
         } catch (error) {
@@ -40,7 +54,7 @@ export class PdfService {
         }
     }
 
-    private async loadFonts(doc: jsPDF) {
+    private async loadFonts(doc: any) {
         // Playfair Display matches "font-serif" in tailwind.config
         const playfair = await this.fetchFont('/assets/fonts/PlayfairDisplay-Bold.ttf');
         doc.addFileToVFS('PlayfairDisplay-Bold.ttf', playfair);
@@ -73,7 +87,7 @@ export class PdfService {
         return window.btoa(binary);
     }
 
-    private async drawFrontSide(doc: jsPDF) {
+    private async drawFrontSide(doc: any, QRCode: any) {
         doc.setFillColor('#fefce8');
         doc.rect(0, 0, 90, 50, 'F');
 
@@ -129,7 +143,7 @@ export class PdfService {
         doc.text(`CRP ${CRP_NUMBER}`, centerX, 36, { align: "center", baseline: "alphabetic" });
     }
 
-    private async drawBackSide(doc: jsPDF) {
+    private async drawBackSide(doc: any, QRCode: any) {
         doc.setFillColor('#064e3b'); // brand-900
         doc.rect(0, 0, 90, 50, 'F');
 
@@ -205,7 +219,7 @@ export class PdfService {
     /**
      * Helper to draw Lucide Icons using svg2pdf
      */
-    private async drawLucideIcon(doc: jsPDF, iconData: LucideIconData, x: number, y: number, size: number, color: string) {
+    private async drawLucideIcon(doc: any, iconData: LucideIconData, x: number, y: number, size: number, color: string) {
         if (!iconData) return;
 
         const svgInfo = document.createElementNS('http://www.w3.org/2000/svg', 'svg');

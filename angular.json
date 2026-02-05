@@ -52,10 +52,27 @@
             ],
             "styles": [
               "src/styles.css"
+            ],
+            "allowedCommonJsDependencies": [
+              "cssesc",
+              "font-family-papandreou",
+              "svgpath",
+              "qrcode",
+              "html2canvas",
+              "core-js",
+              "raf",
+              "rgbcolor",
+              "dijkstrajs"
             ]
           },
           "configurations": {
             "production": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
               "budgets": [
                 {
                   "type": "initial",

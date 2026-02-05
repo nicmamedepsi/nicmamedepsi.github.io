@@ -1,5 +1,6 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { environment } from '../../../../environments/environment';
 import { RouterLink } from '@angular/router';
 import { LucideAngularModule, Flower2, CreditCard } from 'lucide-angular';
 import { APP_NAME, COMPLETE_NAME, CONTACT_INFO, CRP_NUMBER } from '../../../core/constants';
@@ -53,6 +54,7 @@ import { PdfService } from '../../../core/services/pdf.service';
           <p>&copy; {{ currentYear }} {{ COMPLETE_NAME }}. Todos os direitos reservados.</p>
           <div class="flex gap-4 mt-2 md:mt-0 items-center">
             <button 
+                *ngIf="showBusinessCardDownload"
                 (click)="downloadPdf()" 
                 class="flex items-center gap-1 hover:text-white transition-colors opacity-70 hover:opacity-100 cursor-pointer bg-transparent border-none p-0 text-inherit"
                 title="Gerar Cartão de Visita"
@@ -73,6 +75,7 @@ export class FooterComponent {
   CRP_NUMBER = CRP_NUMBER;
   CONTACT_INFO = CONTACT_INFO;
   currentYear = new Date().getFullYear();
+  showBusinessCardDownload = environment.features.showBusinessCardDownload;
 
   readonly icons = { Flower2, CreditCard };
 
