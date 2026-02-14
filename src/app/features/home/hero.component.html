@@ -30,6 +30,32 @@
                 {{ HERO_TEXT.subtitle }}
             </p>
 
+            <!-- Mobile Image Area -->
+            <div class="md:hidden relative flex justify-center items-center py-4">
+                <div class="relative w-64 h-80">
+                    <div
+                        class="absolute inset-0 bg-spring-poppy/30 rounded-[40%] rotate-6 animate-morph-slow opacity-60 blur-md transform scale-110">
+                    </div>
+                    <div
+                        class="absolute inset-0 bg-spring-sun/40 rounded-[60%] -rotate-12 animate-morph opacity-50 blur-md transform scale-105">
+                    </div>
+
+                    <!-- Image Container -->
+                    <div
+                        class="w-full h-full overflow-hidden shadow-2xl border-[4px] border-white relative z-10 animate-morph transition-all duration-1000 bg-stone-200">
+                        <img ngSrc="/photos/nicole-sorrindo.webp" alt="Psicóloga Nicole sorrindo" width="300"
+                            height="375" class="w-full h-full object-cover" />
+                    </div>
+
+                    <!-- Floating Badge (Mini) -->
+                    <div class="absolute -top-4 -right-4 bg-white/95 backdrop-blur-md p-3 rounded-xl shadow-lg z-20 max-w-[120px] text-center border-l-4 border-spring-tulip animate-float"
+                        style="animation-delay: 1.5s">
+                        <p class="text-[10px] font-bold text-spring-tulip uppercase tracking-wide mb-0.5">Foco em</p>
+                        <p class="text-xs text-stone-800 font-serif font-bold leading-tight">Autoestima</p>
+                    </div>
+                </div>
+            </div>
+
             <div class="flex flex-col sm:flex-row gap-4 pt-4 justify-center md:justify-start">
                 <button app-button (click)="scrollToSection('contato')" size="lg" class="group">
                     {{ HERO_TEXT.cta }}
@@ -74,8 +100,8 @@
             </div>
         </div>
 
-        <!-- Image Area -->
-        <div class="relative flex justify-center items-center mt-8 md:mt-0">
+        <!-- Desktop Image Area -->
+        <div class="hidden md:flex relative justify-center items-center mt-8 md:mt-0">
             <div class="relative w-80 h-96 md:w-[420px] md:h-[520px]">
 
                 <div
