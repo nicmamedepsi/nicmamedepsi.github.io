@@ -1,6 +1,6 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule, NgOptimizedImage } from '@angular/common';
-import { RouterLink, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { LucideAngularModule, ArrowRight, Sparkles } from 'lucide-angular';
 import { ButtonComponent } from '../../shared/components/button/button.component';
 import { BlobComponent } from '../../shared/components/blob/blob.component';
@@ -9,7 +9,7 @@ import { Page } from '../../models/types';
 
 @Component({
     selector: 'app-hero',
-    imports: [CommonModule, NgOptimizedImage, RouterLink, LucideAngularModule, ButtonComponent, BlobComponent],
+    imports: [CommonModule, NgOptimizedImage, LucideAngularModule, ButtonComponent, BlobComponent],
     templateUrl: './hero.component.html',
     changeDetection: ChangeDetectionStrategy.OnPush
 })

@@ -1,7 +1,6 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { environment } from '../../../../environments/environment';
-import { RouterLink } from '@angular/router';
 import { LucideAngularModule, Flower2, CreditCard } from 'lucide-angular';
 import { APP_NAME, COMPLETE_NAME, CONTACT_INFO, CRP_NUMBER } from '../../../core/constants';
 import { Page } from '../../../models/types';
@@ -9,7 +8,7 @@ import { PdfService } from '../../../core/services/pdf.service';
 
 @Component({
   selector: 'app-footer',
-  imports: [CommonModule, RouterLink, LucideAngularModule],
+  imports: [CommonModule, LucideAngularModule],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <footer class="bg-brand-900 text-brand-50 py-12">
