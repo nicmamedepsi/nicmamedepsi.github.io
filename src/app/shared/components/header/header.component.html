@@ -2,9 +2,8 @@
     class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:bg-brand-600 focus:text-white focus:px-4 focus:py-2 focus:rounded-lg focus:shadow-lg">
     Ir para conteúdo principal
 </a>
-<header class="sticky top-0 z-50 w-full transition-all duration-300" [class.bg-white-90]="scrolled() || isMenuOpen()"
-    [class.backdrop-blur-md]="scrolled() || isMenuOpen()" [class.border-b]="scrolled() || isMenuOpen()"
-    [class.border-stone-200]="scrolled() || isMenuOpen()" [class.shadow-sm]="scrolled() || isMenuOpen()"
+<header class="sticky top-0 z-50 w-full transition-all duration-300" [class.bg-white]="scrolled() || isMenuOpen()"
+    [class.shadow-lg]="scrolled() || isMenuOpen()" [class.py-0]="scrolled()" [class.py-2]="!scrolled()"
     [class.bg-transparent]="!scrolled() && !isMenuOpen()" [class.border-transparent]="!scrolled() && !isMenuOpen()">
     <div class="container mx-auto px-4 md:px-6 h-20 flex items-center justify-between">
 
