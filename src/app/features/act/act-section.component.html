@@ -1,0 +1,210 @@
+<section class="py-24 bg-paper/50 relative overflow-hidden">
+    <app-blob color="green" class="top-1/4 left-0 w-64 h-64 opacity-60 animate-float pointer-events-none"></app-blob>
+    <app-blob color="purple" class="bottom-1/4 right-0 w-96 h-96 opacity-60 animate-float pointer-events-none"
+        delay="3s"></app-blob>
+
+    <div class="container mx-auto px-4 md:px-6 relative z-10">
+
+        <!-- Intro -->
+        <div class="max-w-4xl mx-auto text-center mb-20">
+            <div
+                class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-spring-iris/20 text-spring-iris text-sm font-bold mb-6 shadow-sm">
+                <lucide-icon [img]="icons.Heart" size="16" class="fill-spring-iris"></lucide-icon> Psicoterapia
+            </div>
+            <h2 class="text-4xl md:text-6xl font-serif text-stone-900 mb-8 leading-tight">
+                Aceitação e Compromisso (ACT)
+            </h2>
+            <p class="text-xl md:text-2xl text-stone-700 leading-relaxed font-light">
+                Uma abordagem para ajudá-lo a aceitar o que está fora do seu controle e se comprometer a <span
+                    class="font-serif italic text-spring-sky-700 font-medium bg-gradient-to-r from-spring-sky-200/50 to-spring-sky-200/50 bg-[length:100%_0.5em] bg-no-repeat bg-[0%_90%] decoration-clone px-1 rounded-sm">
+                    agir para melhorar sua vida
+                </span>.
+            </p>
+        </div>
+
+        <!-- The Balance Visual - Adapted for ACT (Flexibility) -->
+        <div class="grid lg:grid-cols-[1fr_auto_1fr] gap-8 items-center mb-24 max-w-6xl mx-auto">
+
+            <div
+                class="bg-white p-8 rounded-[2.5rem] shadow-lg border border-spring-iris/20 relative overflow-hidden group hover:-translate-y-2 transition-all duration-500">
+                <div
+                    class="absolute top-0 right-0 w-32 h-32 bg-spring-iris/10 rounded-full blur-2xl group-hover:bg-spring-iris/20 transition-colors">
+                </div>
+                <span class="text-sm font-bold tracking-widest text-spring-iris uppercase mb-2 block">O pilar da</span>
+                <h3 class="text-3xl font-serif text-stone-800 mb-4">Atenção Plena (Mindfulness)</h3>
+                <p class="text-stone-600 text-lg leading-relaxed">
+                    Conectar-se com o momento presente e observar seus pensamentos sem julgamento.
+                </p>
+            </div>
+
+            <div class="flex flex-col items-center justify-center gap-4 text-center px-4">
+                <div
+                    class="w-16 h-16 bg-spring-sky/10 rounded-full flex items-center justify-center text-spring-sky animate-pulse">
+                    <lucide-icon [img]="icons.Anchor" size="32"></lucide-icon>
+                </div>
+                <div class="flex flex-col items-center">
+                    <span class="font-serif italic text-2xl text-stone-800">Flexibilidade</span>
+                    <lucide-icon [img]="icons.ArrowRightLeft" class="text-stone-400 mt-2" size="20"></lucide-icon>
+                    <span class="text-xs font-bold text-stone-400 uppercase tracking-widest mt-1">Psicológica</span>
+                </div>
+            </div>
+
+            <div
+                class="bg-white p-8 rounded-[2.5rem] shadow-lg border border-spring-poppy/20 relative overflow-hidden group hover:-translate-y-2 transition-all duration-500">
+                <div
+                    class="absolute top-0 right-0 w-32 h-32 bg-spring-poppy/10 rounded-full blur-2xl group-hover:bg-spring-poppy/20 transition-colors">
+                </div>
+                <span class="text-sm font-bold tracking-widest text-spring-poppy uppercase mb-2 block">O pilar
+                    dos</span>
+                <h3 class="text-3xl font-serif text-stone-800 mb-4">Valores</h3>
+                <p class="text-stone-600 text-lg leading-relaxed">
+                    Identificar o que importa e agir de acordo com seus princípios mais profundos.
+                </p>
+            </div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-12 lg:gap-20 items-start">
+
+            <!-- Skills Section -->
+            <div class="space-y-8">
+                <div>
+                    <h3 class="text-3xl font-serif text-stone-900 mb-4">Os 6 Processos de Flexibilidade</h3>
+                    <p class="text-stone-600 text-lg">
+                        A ACT trabalha através de seis processos principais, agrupados em três pilares:
+                    </p>
+                </div>
+
+                <div class="grid lg:grid-cols-3 gap-6 items-stretch">
+
+                    <!-- Aberto (Sky - Blue) -->
+                    <div
+                        class="bg-spring-sky/5 rounded-3xl p-6 border border-spring-sky/10 flex flex-col h-full relative overflow-visible">
+                        <div class="text-center mb-6 z-10">
+                            <h4 class="font-serif font-bold text-spring-sky-700 text-xl">Aberto</h4>
+                            <p class="text-xs uppercase tracking-widest text-spring-sky-600/70 font-bold">Aceitar &
+                                Desfundir</p>
+                        </div>
+
+                        <div class="space-y-4 z-10 flex-1 flex flex-col">
+                            <!-- Aceitação -->
+                            <div class="bg-white p-4 rounded-xl shadow-sm border border-stone-100 flex-1">
+                                <div class="flex items-center gap-3 mb-2">
+                                    <div class="w-2 h-8 rounded-full bg-spring-sky shrink-0"></div>
+                                    <h5 class="font-serif font-bold text-stone-800">{{ skills[0].title }}</h5>
+                                </div>
+                                <p class="text-stone-500 text-sm leading-snug">{{ skills[0].desc }}</p>
+                            </div>
+
+                            <!-- Desfusão -->
+                            <div class="bg-white p-4 rounded-xl shadow-sm border border-stone-100 flex-1">
+                                <div class="flex items-center gap-3 mb-2">
+                                    <div class="w-2 h-8 rounded-full bg-spring-iris shrink-0"></div>
+                                    <h5 class="font-serif font-bold text-stone-800">{{ skills[1].title }}</h5>
+                                </div>
+                                <p class="text-stone-500 text-sm leading-snug">{{ skills[1].desc }}</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Consciente (Iris - Purple) -->
+                    <div
+                        class="bg-spring-iris/5 rounded-3xl p-6 border border-spring-iris/10 flex flex-col h-full relative overflow-visible">
+                        <!-- Decorative bg element -->
+                        <div
+                            class="absolute -top-10 -right-10 w-32 h-32 bg-spring-iris/10 rounded-full blur-2xl pointer-events-none">
+                        </div>
+
+                        <div class="text-center mb-6 relative z-10">
+                            <h4 class="font-serif font-bold text-spring-iris-700 text-xl">Consciente</h4>
+                            <p class="text-xs uppercase tracking-widest text-spring-iris-600/70 font-bold">Aqui & Agora
+                            </p>
+                        </div>
+
+                        <div class="space-y-4 z-10 flex-1 flex flex-col">
+                            <!-- Contato com o Presente -->
+                            <div class="bg-white p-4 rounded-xl shadow-sm border border-stone-100 flex-1">
+                                <div class="flex items-center gap-3 mb-2">
+                                    <div class="w-2 h-8 rounded-full bg-spring-tulip shrink-0"></div>
+                                    <h5 class="font-serif font-bold text-stone-800">{{ skills[2].title }}</h5>
+                                </div>
+                                <p class="text-stone-500 text-sm leading-snug">{{ skills[2].desc }}</p>
+                            </div>
+
+                            <!-- Eu enquanto contexto -->
+                            <div class="bg-white p-4 rounded-xl shadow-sm border border-stone-100 flex-1">
+                                <div class="flex items-center gap-3 mb-2">
+                                    <div class="w-2 h-8 rounded-full bg-spring-iris shrink-0"></div>
+                                    <h5 class="font-serif font-bold text-stone-800">{{ skills[5].title }}</h5>
+                                </div>
+                                <p class="text-stone-500 text-sm leading-snug">{{ skills[5].desc }}</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Engajado (Poppy - Orange) -->
+                    <div
+                        class="bg-spring-poppy/5 rounded-3xl p-6 border border-spring-poppy/10 flex flex-col h-full relative overflow-visible">
+                        <div class="text-center mb-6 z-10">
+                            <h4 class="font-serif font-bold text-spring-poppy-700 text-xl">Engajado</h4>
+                            <p class="text-xs uppercase tracking-widest text-spring-poppy-600/70 font-bold">Valores &
+                                Ação</p>
+                        </div>
+
+                        <div class="space-y-4 z-10 flex-1 flex flex-col">
+                            <!-- Valores -->
+                            <div class="bg-white p-4 rounded-xl shadow-sm border border-stone-100 flex-1">
+                                <div class="flex items-center gap-3 mb-2">
+                                    <div class="w-2 h-8 rounded-full bg-spring-poppy shrink-0"></div>
+                                    <h5 class="font-serif font-bold text-stone-800">{{ skills[3].title }}</h5>
+                                </div>
+                                <p class="text-stone-500 text-sm leading-snug">{{ skills[3].desc }}</p>
+                            </div>
+
+                            <!-- Ação Compromissada -->
+                            <div class="bg-white p-4 rounded-xl shadow-sm border border-stone-100 flex-1">
+                                <div class="flex items-center gap-3 mb-2">
+                                    <div class="w-2 h-8 rounded-full bg-spring-sun shrink-0"></div>
+                                    <h5 class="font-serif font-bold text-stone-800">{{ skills[4].title }}</h5>
+                                </div>
+                                <p class="text-stone-500 text-sm leading-snug">{{ skills[4].desc }}</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Benefits/Indications -->
+            <div
+                class="bg-gradient-to-br from-spring-sky-700 to-spring-sky-900 rounded-[3rem] p-10 md:p-14 text-white relative overflow-hidden shadow-2xl h-full flex flex-col justify-center">
+                <app-blob color="purple"
+                    class="top-0 right-0 w-64 h-64 bg-white/10 opacity-100 pointer-events-none"></app-blob>
+                <app-blob color="yellow"
+                    class="bottom-0 left-0 w-64 h-64 bg-spring-sky-500/50 opacity-100 pointer-events-none"></app-blob>
+
+                <div class="relative z-10">
+                    <h3 class="text-3xl font-serif mb-8 border-b border-white/20 pb-4 inline-block">Para quem é
+                        indicada?</h3>
+                    <ul class="space-y-4">
+                        @for (item of indications; track item) {
+                        <li class="flex items-start gap-3 group">
+                            <lucide-icon [img]="icons.CheckCircle2"
+                                class="text-spring-sky-300 flex-shrink-0 mt-0.5 group-hover:text-white transition-colors"
+                                size="20"></lucide-icon>
+                            <span
+                                class="font-medium text-spring-sky-50/90 group-hover:text-white transition-colors leading-snug">{{
+                                item }}</span>
+                        </li>
+                        }
+                    </ul>
+
+                    <div class="mt-10 pt-6 border-t border-white/10 text-center">
+                        <p class="text-spring-sky-200 text-sm italic">
+                            "A dor é inevitável, o sofrimento é opcional."
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

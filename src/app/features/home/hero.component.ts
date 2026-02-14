@@ -21,14 +21,19 @@ export class HeroComponent {
 
     approaches = [
         {
-            acro: "DBT",
-            title: "Terapia Comportamental Dialética",
-            desc: "Foco em regulação emocional, mindfulness e viver uma vida que valha a pena."
-        },
-        {
             acro: "AC",
             title: "Análise do Comportamento",
             desc: "Compreensão profunda de como o ambiente influencia nossas ações e sentimentos."
+        },
+        {
+            acro: "ACT",
+            title: "Terapia de Aceitação e Compromisso",
+            desc: "Aceitar o que está fora do seu controle e agir em direção aos seus valores."
+        },
+        {
+            acro: "DBT",
+            title: "Terapia Comportamental Dialética",
+            desc: "Foco em regulação emocional, mindfulness e viver uma vida que valha a pena."
         },
         {
             acro: "FAP",

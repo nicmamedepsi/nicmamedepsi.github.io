@@ -22,6 +22,11 @@ export const routes: Routes = [
         title: 'O que é DBT?'
     },
     {
+        path: 'act',
+        loadComponent: () => import('./features/act/act-section.component').then(m => m.ActSectionComponent),
+        title: 'O que é ACT?'
+    },
+    {
         path: 'contato',
         loadComponent: () => import('./features/contact/contact.component').then(m => m.ContactComponent),
         title: 'Contato'

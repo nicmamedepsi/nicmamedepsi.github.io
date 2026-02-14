@@ -27,6 +27,7 @@ export class HeaderComponent {
         { id: Page.ABOUT, label: 'Sobre Mim', path: '/sobre' },
         { id: Page.SERVICES, label: 'Atuação', path: '/atuacao' },
         { id: Page.DBT, label: 'O que é DBT?', path: '/dbt' },
+        { id: Page.ACT, label: 'O que é ACT?', path: '/act' },
         { id: Page.CONTACT, label: 'Contato', path: '/contato' },
     ];
 

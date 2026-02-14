@@ -3,6 +3,7 @@ export enum Page {
     ABOUT = 'ABOUT',
     SERVICES = 'SERVICES',
     DBT = 'DBT',
+    ACT = 'ACT',
     CONTACT = 'CONTACT',
     BUSINESS_CARD = 'BUSINESS_CARD',
 }

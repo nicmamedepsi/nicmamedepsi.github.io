@@ -37,7 +37,7 @@ export const SERVICES: ServiceItem[] = [
     },
     {
         title: "Terapias Contextuais",
-        description: "Atuação integrada com Análise do Comportamento, FAP e DBT. Foco em compreender seu contexto para gerar mudanças consistentes.",
+        description: "Atuação integrada com Análise do Comportamento, ACT, DBT E FAP. Foco em compreender seu contexto para gerar mudanças consistentes.",
         icon: Sparkles,
     },
     {

@@ -13,7 +13,7 @@ export class DbtSectionComponent {
     readonly icons = { CheckCircle2, Scale, Heart, ArrowRightLeft };
 
     skills = [
-        { title: "Mindfulness", desc: "Estar presente no momento.", color: "bg-spring-leaf" },
+        { title: "Atenção Plena (Mindfulness)", desc: "Estar presente no momento.", color: "bg-spring-leaf" },
         { title: "Regulação Emocional", desc: "Entender e mudar emoções.", color: "bg-spring-iris" },
         { title: "Tolerância ao Mal-estar", desc: "Sobreviver a crises sem piorar.", color: "bg-spring-tulip" },
         { title: "Efetividade Interpessoal", desc: "Pedir o que quer e dizer não.", color: "bg-spring-poppy" }
