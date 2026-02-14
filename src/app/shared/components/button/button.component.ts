@@ -24,9 +24,9 @@ export class ButtonComponent {
     };
 
     private sizes: Record<ButtonSize, string> = {
-        sm: "h-9 px-4 text-sm",
-        md: "h-11 px-6 text-base",
-        lg: "h-14 px-8 text-lg",
+        sm: "min-h-[2.25rem] py-1.5 px-4 text-sm whitespace-normal",
+        md: "min-h-[2.75rem] py-2 px-6 text-base whitespace-normal",
+        lg: "min-h-[3.5rem] py-2.5 px-8 text-lg whitespace-normal",
     };
 
     protected dynamicClasses = computed(() => {

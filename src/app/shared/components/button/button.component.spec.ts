@@ -37,7 +37,8 @@ describe('ButtonComponent', () => {
     it('should apply md size classes by default', () => {
         fixture.detectChanges();
         const classes = fixture.nativeElement.className;
-        expect(classes).toContain('h-11');
+        expect(classes).toContain('min-h-[2.75rem]');
+        expect(classes).toContain('py-2');
         expect(classes).toContain('px-6');
         expect(classes).toContain('text-base');
     });
