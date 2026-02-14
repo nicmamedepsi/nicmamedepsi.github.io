@@ -1,6 +1,6 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule, NgOptimizedImage } from '@angular/common';
-import { RouterLink } from '@angular/router';
+import { RouterLink, Router } from '@angular/router';
 import { LucideAngularModule, ArrowRight, Sparkles } from 'lucide-angular';
 import { ButtonComponent } from '../../shared/components/button/button.component';
 import { BlobComponent } from '../../shared/components/blob/blob.component';
@@ -18,6 +18,27 @@ export class HeroComponent {
     Page = Page;
 
     readonly icons = { ArrowRight, Sparkles };
+
+    constructor(private router: Router) { }
+
+    scrollToSection(fragment: string) {
+        if (this.router.url !== '/' && !this.router.url.startsWith('/#')) {
+            this.router.navigate(['/'], { fragment });
+            return;
+        }
+
+        const element = document.getElementById(fragment);
+        if (element) {
+            const headerOffset = 80;
+            const elementPosition = element.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.scrollY - headerOffset;
+
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth'
+            });
+        }
+    }
 
     approaches = [
         {

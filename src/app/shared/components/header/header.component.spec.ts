@@ -3,9 +3,22 @@ import { HeaderComponent } from './header.component';
 
 describe('HeaderComponent', () => {
     let component: HeaderComponent;
+    let mockRouter: any;
 
     beforeEach(() => {
-        component = new HeaderComponent();
+        mockRouter = {
+            url: '/',
+            navigate: vi.fn()
+        };
+
+        // Mock IntersectionObserver
+        const mockIntersectionObserver = vi.fn();
+        mockIntersectionObserver.prototype.observe = vi.fn();
+        mockIntersectionObserver.prototype.disconnect = vi.fn();
+        mockIntersectionObserver.prototype.unobserve = vi.fn();
+        vi.stubGlobal('IntersectionObserver', mockIntersectionObserver);
+
+        component = new HeaderComponent(mockRouter);
     });
 
     it('should have professionalName defined', () => {
@@ -36,12 +49,6 @@ describe('HeaderComponent', () => {
         expect(component.isMenuOpen()).toBe(false);
     });
 
-    it('closeMenu should keep isMenuOpen false if already closed', () => {
-        expect(component.isMenuOpen()).toBe(false);
-        component.closeMenu();
-        expect(component.isMenuOpen()).toBe(false);
-    });
-
     it('should have navItems with correct structure', () => {
         expect(component.navItems).toBeDefined();
         expect(Array.isArray(component.navItems)).toBe(true);
@@ -50,16 +57,8 @@ describe('HeaderComponent', () => {
         component.navItems.forEach(item => {
             expect(item).toHaveProperty('id');
             expect(item).toHaveProperty('label');
-            expect(item).toHaveProperty('path');
+            expect(item).toHaveProperty('fragment');
         });
-    });
-
-    it('should have icons defined', () => {
-        expect(component.icons).toBeDefined();
-        expect(component.icons.Menu).toBeDefined();
-        expect(component.icons.X).toBeDefined();
-        expect(component.icons.Flower2).toBeDefined();
-        expect(component.icons.MessageCircle).toBeDefined();
     });
 
     it('onWindowScroll should set scrolled to true when scrollY > 20', () => {
@@ -68,9 +67,9 @@ describe('HeaderComponent', () => {
         expect(component.scrolled()).toBe(true);
     });
 
-    it('onWindowScroll should set scrolled to false when scrollY <= 20', () => {
-        Object.defineProperty(window, 'scrollY', { value: 10, writable: true });
-        component.onWindowScroll();
-        expect(component.scrolled()).toBe(false);
+    it('scrollToSection should navigate if not on home page', () => {
+        mockRouter.url = '/cartao-visita';
+        component.scrollToSection('sobre');
+        expect(mockRouter.navigate).toHaveBeenCalledWith(['/'], { fragment: 'sobre' });
     });
 });

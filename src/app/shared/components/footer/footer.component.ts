@@ -31,10 +31,10 @@ import { PdfService } from '../../../core/services/pdf.service';
           <nav aria-label="Navegação do site">
             <h4 class="text-white font-semibold mb-4 font-serif">Navegação</h4>
             <ul class="space-y-2 text-sm text-brand-100/80">
-              <li><a routerLink="/" class="hover:text-white transition-colors cursor-pointer">Início</a></li>
-              <li><a routerLink="/sobre" class="hover:text-white transition-colors cursor-pointer">Sobre Mim</a></li>
-              <li><a routerLink="/atuacao" class="hover:text-white transition-colors cursor-pointer">Serviços</a></li>
-              <li><a routerLink="/contato" class="hover:text-white transition-colors cursor-pointer">Contato</a></li>
+              <li><a (click)="scrollToSection('inicio')" class="hover:text-white transition-colors cursor-pointer">Início</a></li>
+              <li><a (click)="scrollToSection('sobre')" class="hover:text-white transition-colors cursor-pointer">Sobre Mim</a></li>
+              <li><a (click)="scrollToSection('atuacao')" class="hover:text-white transition-colors cursor-pointer">Serviços</a></li>
+              <li><a (click)="scrollToSection('contato')" class="hover:text-white transition-colors cursor-pointer">Contato</a></li>
             </ul>
           </nav>
 
@@ -80,6 +80,20 @@ export class FooterComponent {
   readonly icons = { Flower2, CreditCard };
 
   constructor(private pdfService: PdfService) { }
+
+  scrollToSection(fragment: string) {
+    const element = document.getElementById(fragment);
+    if (element) {
+      const headerOffset = 80;
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.scrollY - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  }
 
   async downloadPdf() {
     await this.pdfService.generateBusinessCard();

@@ -31,12 +31,12 @@
             </p>
 
             <div class="flex flex-col sm:flex-row gap-4 pt-4 justify-center md:justify-start">
-                <button app-button routerLink="/contato" size="lg" class="group">
+                <button app-button (click)="scrollToSection('contato')" size="lg" class="group">
                     {{ HERO_TEXT.cta }}
                     <lucide-icon [img]="icons.ArrowRight"
                         class="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1"></lucide-icon>
                 </button>
-                <button app-button routerLink="/sobre" variant="outline" size="lg"
+                <button app-button (click)="scrollToSection('sobre')" variant="outline" size="lg"
                     class="bg-white/50 backdrop-blur-sm border-2">
                     Conheça meu trabalho
                 </button>
