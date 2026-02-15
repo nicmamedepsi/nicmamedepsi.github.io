@@ -176,7 +176,7 @@ export class PdfService {
         doc.setTextColor('#a7f3d0'); // brand-200
         doc.setFontSize(6);
         doc.text("Atendimento Online", contentLeftX, y + 3);
-        doc.text("Análise do Comportamento e DBT", contentLeftX, y + 6);
+        doc.text("Terapias Comportamentais Contextuais", contentLeftX, y + 6);
 
         // --- QR Code ---
         const qrBoxSize = 19;
